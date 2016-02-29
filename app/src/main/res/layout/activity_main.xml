@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.com.ryanehrlich.simplecommunication.MainActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/data"
+        android:text="Please enter the Information to be sent:" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send!"
+        android:id="@+id/send"
+        android:layout_below="@+id/data"
+        android:layout_alignParentStart="true" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show advanced Options"
+        android:id="@+id/advanced_main"
+        android:checked="false"
+        android:layout_below="@+id/send"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ip"
+        android:layout_below="@+id/advanced_main"
+        android:layout_alignEnd="@+id/data"
+        android:text="10.0.8.2"
+        android:layout_toEndOf="@+id/send" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/port"
+        android:text="5005"
+        android:layout_below="@+id/ip"
+        android:layout_alignStart="@+id/ip" />
+
+</RelativeLayout>
