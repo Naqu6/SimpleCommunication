@@ -12,12 +12,21 @@ public class Networking {
     private Socket socket;
     private OutputStream out;
 
-    public Networking (String IP, int  port) throws Exception {
-        InetAddress ip = InetAddress.getByAddress(IP.getBytes());
-        this.socket = new Socket(ip, port,false);
-        this.out = socket.getOutputStream();
+    public Networking (String IP, int  port)  {
+        try {
+            InetAddress ip = InetAddress.getByAddress(IP.getBytes());
+            this.socket = new Socket(ip, port);
+            this.out = socket.getOutputStream();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
-    public void send(String data) throws Exception {
-        out.write(data.getBytes());
+    public void send(String data) {
+        try {
+            out.write(data.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
