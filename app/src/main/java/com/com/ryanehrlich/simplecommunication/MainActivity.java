@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String IP = "74.125.28.26";
-    private final int PORT = 25;
+    private String IP = "10.25.1.242";
+    private final int PORT = 5005;
 
     protected Networking connection;
     protected EditText text;
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     connection.send(text.getText().toString());
                     try {
-                        Log.d("Recved Data", connection.recive());
+                        Log.d("Recivded Data", connection.recive());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
